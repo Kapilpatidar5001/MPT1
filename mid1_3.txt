@@ -1,0 +1,86 @@
+create_file(){
+        echo "Enter file name"
+        read filename
+        if [ ! -f $filename ]; then
+            touch $filename
+            echo "Successfully created $filename"
+        else
+            echo "File already exists! Do you want to overwrite existing?(Y/N)"
+            read ans
+            if [ $ans=="Y" -o $ans=="y" ]; then
+                touch $filename
+                echo "Successfully created file $filename"
+            else
+                echo "Not creating file $filename...";
+            fi
+        fi
+        }
+
+        cp_file(){
+        echo "Enter source file name"
+        read source
+        if [ -r $source ]; then
+            echo "";
+        else
+            echo "File isn't Readable..!!";
+            return;
+        fi
+        echo "Enter destination file name"
+        read destination
+        if [ -f $destination ]; then
+            echo "Files exists at destination! Want to overwrite existing?(Y/N)"
+            read ans
+            if [ $ans=="Y" -o $ans=="y" ]; then
+                cp $source $destination
+                echo "Successfully copied $source to $destination"
+            else
+                echo "Not copying file...";
+            fi
+        else
+            cp $source $destination
+            echo "Successfully copied $source to $destination"
+        fi
+        }
+
+        mv_file(){
+        echo "Enter source file name"
+        read source
+        if [ -r $source ]; then
+            echo "";
+        else
+            echo "File isn't Readable..!!";
+            return;
+        fi
+        echo "Enter destination file name"
+        read destination
+        if [ -f $source ]; then
+            if [ -f $destination ]; then
+                echo "Files exists at destination! Want to override(Y/N)"
+                read ans
+                if [ $ans=="Y" -o $ans=="y" ]; then
+                    mv $source $destination
+                    echo "Successfully moved $source to $destination"
+                else
+                    echo "Not moving file...";
+                fi
+            else
+                mv $source $destination
+                echo "Successfully moved $source to $destination"
+            fi
+        else
+            echo "Source file does not exists"
+        fi
+        }
+
+        echo "Menu"
+        echo "1. Create a file"
+        echo "2. Copy file"
+        echo "3. Move file"
+        echo "4. Exit"
+        read ch
+        case $ch in
+            1)create_file;;
+            2)cp_file;;
+            3)mv_file;;
+            4)exit;;
+        esac
