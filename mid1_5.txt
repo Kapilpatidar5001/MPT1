@@ -1,0 +1,20 @@
+create or replace procedure data1(mid number)
+is
+	name fooditems.fooditemname%type;
+	
+	cursor c is select fooditemname from fooditems where fooditemid in(select fooditemsid from orderline where orderid in (select orderid from orders where memberid=mid)); 
+	begin
+		open c;
+fetch c into name;
+		loop
+			
+			exit when c%notfound;
+			
+			dbms_output.put_line(name);
+					
+		
+			fetch c into name;
+		end loop;
+	close c;
+			
+	end;

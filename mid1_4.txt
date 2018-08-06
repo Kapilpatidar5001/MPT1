@@ -1,0 +1,12 @@
+4.
+
+1.select count(positionid) from members where positionid=(select positionid from position where position='Associate Professor');
+
+2. SELECT m.lastname,m.firstname,p.position from members m join position p on p.positionid=m.positionid where m.campusid=(select campusid from campus where campusname='Indiana University');
+
+3. select campusname from campus where campusid=(select campusid from members where rownum<2 and campusid in (select campusid from campus natural join members group by campusid));
+
+4.select fooditemname,quantity from orders natural join orderline where orderdate='March 5, 2005';
+
+
+5.select * from members where memberid in(select memberid from orders where orderid in (select orderid from orderline where fooditemsid in( select fooditemid from fooditems where fooditemname like '%Chips%')));

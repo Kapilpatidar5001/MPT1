@@ -1,0 +1,138 @@
+
+package student.info;
+import java.util.*;
+
+
+public class Details {
+int age;
+String name,fathersName,mothersName,address,gender,memberName,design,pos;
+int rollno;
+float average,attendance;
+Scanner sc=new Scanner(System.in);
+    void personalDetails()
+{
+    System.out.println("enter name:");
+    name=sc.next();
+    System.out.println("enter Age=");
+     age=sc.nextInt();
+    System.out.println("enter gender");
+    gender=sc.next();
+    System.out.println("enter Address:");
+     address=sc.next();
+    System.out.println("enter Father's Name:");
+    fathersName=sc.next();
+    System.out.println("enter Mother's name:");
+    mothersName=sc.next();
+    
+    
+}
+    void eduDetails()
+    {
+        System.out.println("enter Roll no. ");
+        rollno=sc.nextInt();
+        System.out.println("enter Average of Marks:");
+        average=sc.nextFloat();
+        System.out.println("enter Attendance:");
+        attendance=sc.nextFloat();
+                
+    }
+    void staffDetails()
+    {
+        System.out.println("enter name of the staff:");
+        memberName=sc.next();
+        System.out.println("enter Designation:");
+        design=sc.next();
+        System.out.println("enter position:");
+        pos=sc.next();
+        
+        
+        
+    }
+    void showAll()
+    {
+        System.out.println("STUDENT PERSONAL DETAILS");
+        System.out.println("Name of the student is:"+name);
+        System.out.println("Age="+age);
+        System.out.println("Student is"+gender);
+        System.out.println("Address of the Student is:"+address);
+        System.out.println("Father's Name:"+fathersName);
+        System.out.println("Mother's name is:"+mothersName);
+        System.out.println("STUDENT EDUCATIONAL DEATILS");
+        System.out.println("Roll no of the student "+rollno);
+        System.out.println("Average of Marks of student="+average);
+        System.out.println("Attendance of student="+attendance);
+        System.out.println("STAFF DETAILS");
+        System.out.println("Name of the Member:"+memberName);
+        System.out.println("Designation="+design);
+        System.out.println("His position:"+pos);
+        
+        
+        
+    }
+    
+    public static void main(String args[])
+    {
+        Details a=new Details();
+        System.out.println("STUDENT PERSONAL DETAILS");
+        a.personalDetails();
+        System.out.println("STUDENT EDUCATIONAL DEATILS");
+        a.eduDetails();
+        System.out.println("STAFF DETAILS");
+        a.staffDetails();
+        a.showAll();
+        
+        
+    }
+    
+}
+
+
+
+
+
+
+output::
+
+STUDENT PERSONAL DETAILS
+enter name:
+kapil
+enter Age=
+23
+enter gender
+M
+enter Address:
+kota
+enter Father's Name:
+gajanand
+enter Mother's name:
+Rampyari
+STUDENT EDUCATIONAL DEATILS
+enter Roll no. 
+21
+enter Average of Marks:
+80
+enter Attendance:
+75
+STAFF DETAILS
+enter name of the staff:
+ramsingh
+enter Designation:
+faculty
+enter position:
+professor
+STUDENT PERSONAL DETAILS
+Name of the student is:kapil
+Age=23
+Student isM
+Address of the Student is:kota
+Father's Name:gajanand
+Mother's name is:Rampyari
+STUDENT EDUCATIONAL DEATILS
+Roll no of the student 21
+Average of Marks of student=80.0
+Attendance of student=75.0
+STAFF DETAILS
+Name of the Member:ramsingh
+Designation=faculty
+His position:professor
+

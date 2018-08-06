@@ -1,0 +1,2 @@
+cat kp.txt | awk 'NR==10'
+chmod ugo+x Test.sh

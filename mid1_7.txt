@@ -1,0 +1,5 @@
+column lastname heading 'Last Name'
+column firstname heading 'First Name'
+column campusaddress heading 'Address'
+column contactduration heading 'Contact Duration time'
+select lastname,firstname,campusaddress,contactduration from members;
