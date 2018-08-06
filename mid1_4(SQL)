@@ -1,0 +1,5 @@
+1.select count(positionid) from members where positionid=(select positionid from position where position='Associate Professor');
+
+2. SELECT m.lastname,m.firstname,p.position from members m join position p on p.positionid=m.positionid where m.campusid=(select campusid from campus where campusname='Indiana University');
+
+3.
