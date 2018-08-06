@@ -1,0 +1,23 @@
+create or replace function quantity(pos varchar2) return number is
+ q number;
+  
+ begin
+ select SUM(quantity) INTO q from orderline where orderid in(select orderid from orders where memberid in(select memberid from members where positionid in(select positionid from position where position='Lecturer')));
+ return q;
+EXCEPTION
+   WHEN NO_DATA_FOUND THEN
+  DBMS_OUTPUT.PUT_LINE('NO DATA FOUND');
+  WHEN OTHERS THEN
+  DBMS_OUTPUT.PUT_LINE('ERROR');
+ END quantity;
+
+
+
+output:
+
+
+SQL> select quantity('Lecturer') from dual;
+
+QUANTITY('LECTURER')
+--------------------
+                  13
